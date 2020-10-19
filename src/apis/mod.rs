@@ -40,8 +40,8 @@ pub fn urlencode<T: AsRef<str>>(s: T) -> String {
 
 pub mod activity_api;
 pub mod authentication_api;
-// pub mod bot_api;
-// pub mod channel_api;
+pub mod bot_api;
+pub mod channel_api;
 pub mod clip_api;
 pub mod default_api;
 pub mod file_api;
@@ -49,7 +49,7 @@ pub mod group_api;
 pub mod me_api;
 pub mod message_api;
 pub mod notification_api;
-// pub mod oauth2_api;
+pub mod oauth2_api;
 pub mod pin_api;
 pub mod public_api;
 pub mod stamp_api;
