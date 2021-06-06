@@ -1,3 +1,5 @@
+use std::{error::Error as StdError, fmt};
+
 use reqwest;
 use serde_json;
 
@@ -14,6 +16,14 @@ pub enum Error<T> {
     Serde(serde_json::Error),
     Io(std::io::Error),
     ResponseError(ResponseContent<T>),
+}
+
+impl<T: fmt::Debug> StdError for Error<T> {}
+
+impl<T: fmt::Debug> fmt::Display for Error<T> {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
 }
 
 impl<T> From<reqwest::Error> for Error<T> {
