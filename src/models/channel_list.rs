@@ -16,7 +16,7 @@ pub struct ChannelList {
     #[serde(rename = "public")]
     pub public: Vec<crate::models::Channel>,
     /// ダイレクトメッセージチャンネルの配列
-    #[serde(rename = "dm")]
+    #[serde(rename = "dm", default)]
     pub dm: Vec<crate::models::DmChannel>,
 }
 
